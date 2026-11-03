@@ -1,0 +1,3 @@
+- insert:
+    - id: readable-output
+      name: dsh-readable-output

@@ -1,0 +1,47 @@
+{
+  "name": "dsh-readable-output",
+  "version": "0.1.0",
+  "description": "A portable DeepSeek Harness plugin that adds an always-on readable-output contract.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "output"
+  ],
+  "author": "xue1991 (https://github.com/xuex991)",
+  "homepage": "https://github.com/xuex991/dsh-readable-output#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuex991/dsh-readable-output.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuex991/dsh-readable-output/issues"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.1.0-rc.6"
+  }
+}
