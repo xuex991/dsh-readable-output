@@ -1,6 +1,6 @@
 {
   "name": "dsh-readable-output",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A portable DeepSeek Harness plugin that adds an always-on readable-output contract.",
   "type": "module",
   "main": "lib/index.js",

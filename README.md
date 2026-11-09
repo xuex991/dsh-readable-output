@@ -6,14 +6,16 @@ every machine.
 
 ## What it adds
 
-The plugin registers one additive `systemPrompt` section at order `90`:
+The plugin registers one additive `systemPrompt` section at order `200`, after
+tool and deliverable guidance:
 
-- answer in the user's language;
-- put the direct answer first;
-- prefer plain language before jargon;
-- do not recite tool calls or internal reasoning;
-- mark uncertainty;
-- keep responses concise.
+- put the direct answer on the first line;
+- write a finished note, not a transcript of the work;
+- keep one idea per line and at most two levels;
+- prefer bullets over tables, with a hard budget on headings and bold;
+- default to 10 nonblank lines, or 20 for a complex analysis;
+- do not narrate tool calls, logs, or internal reasoning;
+- never invent facts, sources, or links.
 
 It does not replace the deployment persona or other prompt sections.
 
@@ -26,6 +28,12 @@ dsh plugin --profile desktop add -w 'github:xuex991/dsh-readable-output'
 `-w` is required by the pnpm version bundled with DSH `0.1.0-rc.6`. The
 `dsh plugin add` command installs the package and adds it to the selected
 profile's `dsh.profile.bundles`, which mounts the output contract.
+
+If the bundled pnpm store major version does not match the profile's existing
+`node_modules`, mount a local checkout manually instead: add
+`"dsh-readable-output": "link:/absolute/path/to/dsh-readable-output"` to the
+profile's `dependencies`, add `"dsh-readable-output"` to its
+`dsh.profile.bundles`, and symlink it into the profile's `node_modules`.
 
 ## Manual mount
 
